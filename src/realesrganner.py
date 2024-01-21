@@ -90,7 +90,7 @@ class RealESRGANer:
                 ]
 
                 # upscale tile
-                output_tile = self.model.execute(input_tile)
+                output_tile = self.model.forward(input_tile)
 
                 # output tile area on total image
                 output_start_x = input_start_x * self.scale

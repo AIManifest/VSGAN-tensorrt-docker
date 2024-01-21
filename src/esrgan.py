@@ -640,11 +640,11 @@ def conv1x1(in_planes: int, out_planes: int, stride=1) -> nn.Conv2d:
 # https://github.com/HolyWu/vs-realesrgan/blob/master/vsrealesrgan/__init__.py
 import numpy as np
 import torch
-import vapoursynth as vs
+# import vapoursynth as vs
 from .realesrganner import RealESRGANer
 
-core = vs.core
-vs_api_below4 = vs.__api_version__.api_major < 4
+# core = vs.core
+# vs_api_below4 = vs.__api_version__.api_major < 4
 
 
 class ESRGAN_inference:
@@ -707,7 +707,7 @@ class ESRGAN_inference:
         del example_data
 
     @torch.inference_mode()
-    def execute(self, img) -> vs.VideoNode:
+    def execute(self, img):# -> vs.VideoNode:
         if self.fp16 == True:
             img = img.half()
 
